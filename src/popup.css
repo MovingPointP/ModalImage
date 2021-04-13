@@ -1,6 +1,6 @@
 body {
   width: 100px;
-  height: 80px;
+  height: 100px;
 }
 
 input {
@@ -54,6 +54,8 @@ input:checked + label:after {
 p {
   text-align: center;
   font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 3px;
 }
 
 #toggle-switch {
@@ -62,7 +64,7 @@ p {
   height: 42px;
   margin: auto;
 }
-
+/*
 .label {
   margin-top: 20px;
 }

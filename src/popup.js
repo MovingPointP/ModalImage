@@ -20,9 +20,15 @@ const changeOnOff = () => {
         }
     })
 }
+//optionページを開く
+const createOption = () => {
+    chrome.tabs.create({ 'url': '/options.html' })
+}
+
 
 window.onload = () => {
     const toggleSwitch = document.getElementById('toggle-switch')
+    const optionLink = document.getElementById('option-link')
     stateOnOff()
 
     var textbox = ''
@@ -36,6 +42,10 @@ window.onload = () => {
             textbox.appendChild(textContent)
             document.body.appendChild(textbox)
         }
+    }
+
+    optionLink.onclick = () => {
+        createOption()
     }
 
 }
