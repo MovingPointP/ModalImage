@@ -244,7 +244,10 @@ window.onload = () => {
                 const nowUrl = protocol + host
                 var isBlack = false
 
-                const blackList = items.urlList
+                var blackList = items.urlList
+                if (!blackList) {
+                    blackList = []
+                }
                 const result = blackList.indexOf(nowUrl)
                 if (result >= 0) {
                     isBlack = true
