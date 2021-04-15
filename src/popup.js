@@ -47,5 +47,4 @@ window.onload = () => {
     optionLink.onclick = () => {
         createOption()
     }
-
 }
