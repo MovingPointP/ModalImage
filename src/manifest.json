@@ -1,5 +1,5 @@
 {
-    "name": "img-modal",
+    "name": "ModalImage",
     "version": "1.0.0",
     "manifest_version": 2,
     "description": "画像clickでモーダル表示",
@@ -40,6 +40,8 @@
         "chrome_style": true
     },
     "permissions": [
-        "storage"
+        "storage",
+        "contextMenus",
+        "activeTab"
     ]
 }

@@ -233,15 +233,31 @@ var container = ''
 var imgSrc = ''
 
 window.onload = () => {
+    
     chrome.storage.sync.get(['switch'], (items) => {
         const sw = items.switch
         if (sw) {
-            createButton()
-            document.addEventListener('mouseover', (e) => overImg(e.target))
-            document.addEventListener('wheel', () => {
-                button.style.display = 'none'
+            chrome.storage.sync.get(['urlList'], (items) => {
+                const protocol = location.protocol
+                const host = location.host
+                const nowUrl = protocol + host
+                var isBlack = false
+
+                const blackList = items.urlList
+                const result = blackList.indexOf(nowUrl)
+                if (result >= 0) {
+                    isBlack = true
+                }
+
+                if (!isBlack) {
+                    createButton()
+                    document.addEventListener('mouseover', (e) => overImg(e.target))
+                    document.addEventListener('wheel', () => {
+                        button.style.display = 'none'
+                    })
+                }
             })
+            
         }
     })
 }
- 
